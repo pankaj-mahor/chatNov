@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN for icon -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"> -->
+    <link rel="shortcut icon" href="../favicon (2).ico" type="image/x-icon">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Google Fonts INTER font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700&display=swap" rel="stylesheet">
+    <!-- External css file -->
+    <link rel="stylesheet" href="./style.css">
+    <title>Chatting You Love</title>
+</head>
+<body>
+    <!-- container & title -->
+    <div class="container my-4">
+        <h1 class="my-4 text-center">Chat Rooms</h1>
+        <!-- buttons for chat -->
+        <div class="chat-rooms mb-3 text-center">
+            <div class="my-2">Choose a Chatroom: <span id="namecurrent"></span></div>
+            <button class="btn" id="general">#General</button>
+            <button class="btn" id="gaming">#gaming</button>
+            <button class="btn" id="music">#music</button>
+            <button class="btn" id="web-dev">#web-dev</button>
+        </div>
+        <!-- update name -->
+        <form class="new-name my-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Update Name:</div>
+                </div>
+                <input type="text" id="name" class="form-control" placeholder="mario" required>
+                <div class="input-group-append">
+                    <input type="submit" class="btn" value="Update">
+                </div>
+            </div>
+            <div class="update-msg"></div>
+        </form>
+        <!-- chat list -->
+        <div class="chat-window">
+            <ul class="chat-list list-group"></ul>
+        </div>
+        <!-- new chat -->   
+        <form class="new-chat my-6">
+            <div class="input-group">
+                <!-- <div class="input-group-prepend">
+                    <div class="input-group-text">Your Message:</div>
+                </div> -->
+                <input type="text" id="message" class="form-control" placeholder="Write your message here" required>
+                <div class="input-group-append">
+                    <input type="submit" class="btn" value="Send">
+                </div>
+            </div>
+        </form>
+        
+
+    </div>
+
+
+
+    <!-- DATE FNS CDN's -->
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBG58hDV5GCUdBpMEvCV02Y8FF3b5iTEfE",
+            authDomain: "chat-project-1-cc31c.firebaseapp.com",
+            databaseURL: "https://chat-project-1-cc31c.firebaseio.com",
+            projectId: "chat-project-1-cc31c",
+            storageBucket: "chat-project-1-cc31c.appspot.com",
+            messagingSenderId: "17691797710",
+            appId: "1:17691797710:web:1b96674093aea9c765c89f",
+            measurementId: "G-Y0VMG2ZDFX"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db =  firebase.firestore();
+    </script>
+
+    <script src="./scripts/chat.js"></script>
+    <script src="./scripts/ui.js"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
